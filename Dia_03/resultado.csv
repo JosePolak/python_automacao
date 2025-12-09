@@ -1,0 +1,10 @@
+nome,idade,cidade,salario,cargo,salario_anual,categoria
+Ana,23,São Paulo,4999.57,analista,59994.84,Junior
+Bruno,31,Rio de Janeiro,3500.01,desenvolvedor,42000.12,Junior
+Carla,29,Belo Horizonte,2764.99,estagiário,33179.88,Junior
+Daniel,19,Curitiba,8000.0,diretor,96000.0,Pleno
+João,45,Piraquara,6800.32,diretor,81603.84,Pleno
+Nelson,43,Colombo,7503.21,analista,90038.52,Pleno
+José,48,São Paulo,15000.01,gerente,180000.12,Senior
+Sheila,21,Curitiba,2700.0,estagiário,32400.0,Junior
+Manoel,61,São José dos Pinhais,20000.0,gerente,240000.0,Senior

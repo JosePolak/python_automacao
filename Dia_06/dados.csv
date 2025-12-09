@@ -1,0 +1,11 @@
+nome,cidade,salario,idade,cargo,bonus,departamento
+  ana   ,sao paulo,4.500,28,analista de dados,500.0,Dados
+BRUNO,Sampa,5200,35,Analista Dados,,dados
+carlos,São Paulo,"6,100",41,Analista de Dados,300.0,DADOS
+dUda ,sp,4300,22,ANALISTA  DE  DADOS,,RH
+elisa,sp ,8.000,30,estagiario,1000.0,rh
+ Fabio,rio de janeiro,"3,900",29,Estagiário,,Financeiro
+mariA,rj,7000,45,cientista de dados,800.0,financeiro
+joao  ,Rio,5.300,33,Cientista Dados,,TI
+PaUla,RIO DE JANEIRO,"2,800",27,Cientista de Dados,200.0,ti
+  roBERto,curitiba,3100,50,gerente,,marketing
