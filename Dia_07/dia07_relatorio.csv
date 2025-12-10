@@ -1,0 +1,9 @@
+nome_limpo,empresa,cargo,nivel,salario,salario_total,empresa_valida
+Luana Martins,Tesla,Especialista,4,15500,17360.0,True
+Joao Pedro,Tesla,Diretor,5,15000,16800.0,True
+Rafael Silva,Tesla,Sênior,3,9000,10080.0,True
+Carlos Almeida,Google,Sênior,3,8500,9520.0,True
+Ana Beatriz,Ambev,Pleno,2,5200,5616.0,True
+Maria Souza,Ambev,Júnior,1,3500,3780.0,True
+Juliana Santos,Google,Estagiário,0,1900,1995.0,True
+Jose Silva,Ambev,Estagiário,0,1800,1890.0,True

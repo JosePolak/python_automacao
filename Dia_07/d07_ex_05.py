@@ -11,8 +11,79 @@
 # 3. Ordenar por maior salário_total.
 # 4. Exportar para dia07_relatorio.csv.
 
+import pandas as pd
 
+df = pd.read_csv('dados.csv')
+import re
 
+# Exercício 01 — Ajuste de nomes com inconsistências
+def limpar_nome(nome):
+    nome = str(nome).strip().lower()
+    # remover aspas, tipos diferentes de travessão, caracteres estranhos
+    nome = re.sub(r'[“”"\'´`]', '', nome)
+    # trocar qualquer coisa que não seja letra ou espaço por espaço
+    nome = re.sub(r'[^a-zà-ú\s]', ' ', nome)
+    # trocar múltiplos espaços por um só
+    nome = re.sub(r'\s+', ' ', nome).strip()
+    # capitalizar
+    nome = nome.title()
+    return nome
 
+# Aplicar a função de limpeza ao DataFrame
+df['nome_limpo'] = df['nome'].apply(limpar_nome)
 
+# Separar primeiro nome e sobrenome
+df['primeiro_nome'] = df['nome_limpo'].str.split().str[0]
+df['sobrenome'] = df['nome_limpo'].str.split().str[-1]
 
+# Exercício 02
+df['empresa'] = (
+    df['empresa']
+    .astype(str)
+    .str.strip()
+    .str.lower()
+)
+
+df.loc[df['empresa'].str.contains(r'g.*gle|g.*ou', case=False, regex=True), 'empresa'] = 'Google'
+df.loc[df['empresa'].str.contains(r'a.*ev|a.*ve', case=False, regex=True), 'empresa'] = 'Ambev'
+df.loc[df['empresa'].str.contains(r't.*la', case=False, regex=True), 'empresa'] = 'Tesla'
+
+df['empresa_valida'] = df['empresa'].isin(['Google', 'Ambev', 'Tesla'])
+
+# Exercício 03
+df['cargo'] = (
+    df['cargo']
+    .astype(str)
+    .str.strip()
+    .str.lower()
+    .str.title()
+)
+
+df.loc[df['cargo'].str.contains('junior', case=False), 'cargo'] = 'Júnior'
+df.loc[df['cargo'].str.contains('senior', case=False), 'cargo'] = 'Sênior'
+df.loc[df['cargo'].str.contains('estagiario', case=False), 'cargo'] = 'Estagiário'
+
+df.loc[df['cargo'] == 'Estagiário', 'nivel'] = 0
+df.loc[df['cargo'] == 'Júnior', 'nivel'] = 1
+df.loc[df['cargo'] == 'Pleno', 'nivel'] = 2
+df.loc[df['cargo'] == 'Sênior', 'nivel'] = 3
+df.loc[df['cargo'] == 'Especialista', 'nivel'] = 4
+df.loc[df['cargo'] == 'Diretor', 'nivel'] = 5
+
+df['nivel'] = df['nivel'].astype('Int64')
+
+# Exercício 04
+df.loc[df['salario'] <= 3000, 'bonus'] = df['salario'] * 0.05
+df.loc[(df['salario'] > 3000) & (df['salario'] <= 7000), 'bonus'] = df['salario'] * 0.08
+df.loc[df['salario'] > 7000, 'bonus'] = df['salario'] * 0.12
+
+df['salario_total'] = df['salario'] + df['bonus']
+
+# Exercício 05
+df_final = df[['nome_limpo', 'empresa', 'cargo', 'nivel', 'salario', 'salario_total', 'empresa_valida']]
+df_final = df_final[df_final['empresa_valida']]
+df_final = df_final.sort_values(by='salario_total', ascending=False)
+
+df_final.to_csv('dia07_relatorio.csv', index=False)
+
+print(df_final)
