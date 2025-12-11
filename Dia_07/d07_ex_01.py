@@ -12,9 +12,9 @@
 # 3. Criar uma coluna com o primeiro nome e outra com o sobrenome.
 
 import pandas as pd
+import re
 
 df = pd.read_csv('dados.csv')
-import re
 
 def limpar_nome(nome):
     nome = str(nome).strip().lower()
