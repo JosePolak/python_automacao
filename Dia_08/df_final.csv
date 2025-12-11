@@ -1,0 +1,16 @@
+nome,cargo,cidade,salario,faixa_salarial
+Marcos,Analista de Dados,São Paulo,2500,Baixa
+Ana,Cientista de Dados,São Paulo,3200,Média
+Joao,Analista de Dados,São Paulo,4800,Média
+Clara,Analista de Dados,São Paulo,5100,Média
+Paulo,Cientista de Dados,Rio de Janeiro,7000,Média
+Maria,Engenheiro de Dados,Rio de Janeiro,2900,Baixa
+Pedro,Engenheiro de Dados,Rio de Janeiro,3500,Média
+Luiza,Estagiário,Belo Horizonte,8000,Alta
+Julio,Estagiário,Belo Horizonte,7500,Alta
+Ana,Gerente,Belo Horizonte,2800,Baixa
+Fernanda,Gerente,São Paulo,6000,Média
+Ricardo,Gerente,São Paulo,4500,Média
+Bia,Estagiário,Rio de Janeiro,2300,Baixa
+Carla,Cientista de Dados,Rio de Janeiro,9000,Alta
+Rodrigo,Analista de Dados,Belo Horizonte,5200,Média
