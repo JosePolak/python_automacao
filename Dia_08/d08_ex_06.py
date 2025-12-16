@@ -52,6 +52,7 @@ def limpar_nome(nome):
     # capitalizar cada palavra
     nome = nome.title()
     return nome
+
 # Aplicar a função de limpeza ao DataFrame
 df['df_nome_ok'] = df['nome'].apply(limpar_nome)
 

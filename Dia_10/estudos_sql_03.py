@@ -72,3 +72,4 @@ produtos = cursor.fetchall()
 
 for p in produtos:
     print(p)
+
